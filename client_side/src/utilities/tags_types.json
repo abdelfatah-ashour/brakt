@@ -1,0 +1,72 @@
+[
+  {
+    "id": 324631354321,
+    "category": "sports",
+    "allTags": [
+      "football",
+      "basketball",
+      "handball",
+      "boxing",
+      "golf",
+      "table-tennis",
+      "tennis"
+    ]
+  },
+  {
+    "id": 765431231,
+    "category": "technology",
+    "allTags": [
+      "front_end",
+      "back_end",
+      "fullstack",
+      "ai",
+      "cloud",
+      "css",
+      "html",
+      "javascript",
+      "json",
+      "jsonwebtoken",
+      "jwt",
+      "node js",
+      "mongo db",
+      "sql",
+      "no_sql",
+      "php",
+      "larvel",
+      "ruby",
+      "c++",
+      "paython",
+      "parcel",
+      "webpack"
+    ]
+  },
+  {
+    "id": 216843144,
+    "category": "healthy",
+    "allTags": [
+      "foods",
+      "fat",
+      "fit",
+      "vegetables",
+      "fruit",
+      "gym",
+      "Gymnastics",
+      "cardio",
+      "running",
+      "protein",
+      "cycling"
+    ]
+  },
+  {
+    "id": 646631688,
+    "category": "general",
+    "allTags": [
+      "news world",
+      "business",
+      "science",
+      "tech",
+      "travel",
+      "culture"
+    ]
+  }
+]

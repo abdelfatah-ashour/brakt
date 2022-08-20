@@ -1,0 +1,24 @@
+@import "./variables.scss";
+
+.wrappers-tags {
+  box-shadow: 0 0 2px 16px #fff;
+  margin-top: 32px;
+  border-radius: 8px;
+}
+
+.heading-tags {
+  font-weight: 700;
+  line-height: 120px;
+}
+
+.one-tag {
+  color: $third-color;
+  line-height: 1.9;
+  &:hover {
+    color: $first-color;
+  }
+}
+
+.text-tag {
+  font-size: 24px;
+}

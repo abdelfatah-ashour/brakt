@@ -1,0 +1,118 @@
+@import "./variables.scss";
+
+.main-articles {
+  width: 100%;
+  min-height: calc(100vh - 55px);
+}
+
+.hotTags {
+  width: 250px;
+  min-height: 400px;
+  padding: 8px;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  background-color: #fff;
+  border-radius: 0 4px 4px 0;
+  z-index: 310;
+
+  .open-tab-tags,
+  .close-tab-tags {
+    padding: 4px;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    min-width: 40px;
+    height: 40px;
+    &:active,
+    &:focus {
+      border: 0;
+      outline: 0;
+    }
+  }
+
+  .open-tab-tags {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    background-color: $first-color;
+    transform: translate(100%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 4px 4px 0;
+    padding: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 222;
+  }
+
+  .close-tab-tags {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: $second-color;
+  }
+
+  ul {
+    li {
+      line-height: 1.7;
+      a {
+        color: $second-color;
+        padding: 2px;
+        &:hover {
+          color: $first-color;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.toggleHotTags {
+  transform: translate(0, -50%);
+  transition: all 0.75s ease-in-out;
+  .open-tab-tags {
+    display: none;
+  }
+}
+
+.nav-articles {
+  margin: 8px 0;
+}
+
+.list-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  .btn-nav {
+    border: 2px solid transparent;
+    outline: 0;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px;
+  }
+}
+
+.active-btn-articles {
+  border-bottom-color: $third-color !important;
+  border-radius: 0 !important;
+}
+
+.wrapper-articles {
+  padding: 16px;
+}
+
+@media (max-width: 576px) {
+  .nav-articles {
+    padding: 4px 8px !important;
+  }
+}

@@ -1,0 +1,32 @@
+.faq-page {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.container-faq {
+  width: 80%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 1.7;
+  padding: 1rem;
+}
+
+.container-faq h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.container-faq h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.container-faq p {
+  font-size: 14px;
+}
+/*# sourceMappingURL=faq.css.map */

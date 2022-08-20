@@ -1,0 +1,57 @@
+/*
+    reset all properties css
+*/
+@import "./variables";
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// font heading
+@font-face {
+  font-family: "Josefin Sans", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+  font-display: swap;
+  font-weight: 600;
+}
+
+// main content font
+@font-face {
+  font-family: "Open Sans", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap");
+  font-display: swap;
+  font-weight: 400;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 0.85rem;
+  background-color: $four-color;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+p,
+span,
+a,
+span,
+strong {
+  font-family: "Open Sans", sans-serif;
+}

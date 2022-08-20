@@ -1,0 +1,60 @@
+@import "./variables.scss";
+
+.register {
+  width: 40%;
+  line-height: 1.7;
+  box-shadow: 0 0 2px 8px #fff;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.head-register {
+  color: $first-color;
+  text-transform: uppercase;
+  margin: 2rem 0;
+  font-weight: 700;
+}
+.mainReset {
+  width: 100%;
+  height: 500px;
+}
+
+.reset {
+  align-self: center;
+  width: 30%;
+  box-shadow: 0 0 2px 8px #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  h1 {
+    font-size: 22px;
+  }
+
+  .btn {
+    font-weight: 700;
+  }
+}
+
+
+
+
+
+@media (max-width: 576px) {
+  .register {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 576.5px) and(max-width: 768px) {
+  .register {
+    width: 80%;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 576.5px) and(max-width: 768px) {
+  .register {
+    width: 75%;
+    padding: 1.5rem;
+  }
+}

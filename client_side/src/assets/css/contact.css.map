@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,aAAa,CAAC;EACZ,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,mBAAmB;CAChC;;AAED,AAAA,QAAQ,CAAC;EACP,KAAK,EAAE,GAAG;EACV,gBAAgB,EAAE,IAAI;EACtB,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,qBAAqB;EAChC,OAAO,EAAE,IAAI;CAId;;AAXD,AAQE,QARM,CAQN,EAAE,CAAC;EACD,WAAW,EAAE,GAAG;CACjB",
+    "sources": [
+        "contact.scss",
+        "variables.scss"
+    ],
+    "names": [],
+    "file": "contact.css"
+}

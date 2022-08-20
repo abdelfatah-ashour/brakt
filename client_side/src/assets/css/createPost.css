@@ -1,0 +1,37 @@
+h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  word-spacing: 16px;
+  line-height: 120px;
+}
+
+.container-create-post {
+  width: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-shadow: 0 0 2px 8px #fff;
+          box-shadow: 0 0 2px 8px #fff;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+label {
+  color: #0b0b0b !important;
+  font-weight: 700;
+  padding: 2px;
+}
+
+@media (max-width: 576px) {
+  .container-create-post {
+    width: 95%;
+  }
+}
+
+@media (min-width: 576.5px) and (max-width: 768px) {
+  .container-create-post {
+    width: 75%;
+  }
+}
+/*# sourceMappingURL=createPost.css.map */

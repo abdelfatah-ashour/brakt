@@ -1,0 +1,30 @@
+@import "./variables.scss";
+
+.faq-page {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.container-faq {
+  width: 80%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.7;
+  padding: 1rem;
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 14px;
+  }
+}

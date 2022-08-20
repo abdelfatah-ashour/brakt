@@ -1,0 +1,25 @@
+.wrappers-tags {
+  -webkit-box-shadow: 0 0 2px 16px #fff;
+          box-shadow: 0 0 2px 16px #fff;
+  margin-top: 32px;
+  border-radius: 8px;
+}
+
+.heading-tags {
+  font-weight: 700;
+  line-height: 120px;
+}
+
+.one-tag {
+  color: #323ebe;
+  line-height: 1.9;
+}
+
+.one-tag:hover {
+  color: #ff0000;
+}
+
+.text-tag {
+  font-size: 24px;
+}
+/*# sourceMappingURL=tags.css.map */

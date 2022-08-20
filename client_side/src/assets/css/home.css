@@ -1,0 +1,138 @@
+.main-articles {
+  width: 100%;
+  min-height: calc(100vh - 55px);
+}
+
+.hotTags {
+  width: 250px;
+  min-height: 400px;
+  padding: 8px;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+  background-color: #fff;
+  border-radius: 0 4px 4px 0;
+  z-index: 310;
+}
+
+.hotTags .open-tab-tags,
+.hotTags .close-tab-tags {
+  padding: 4px;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  min-width: 40px;
+  height: 40px;
+}
+
+.hotTags .open-tab-tags:active, .hotTags .open-tab-tags:focus,
+.hotTags .close-tab-tags:active,
+.hotTags .close-tab-tags:focus {
+  border: 0;
+  outline: 0;
+}
+
+.hotTags .open-tab-tags {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background-color: #ff0000;
+  -webkit-transform: translate(100%, -50%);
+          transform: translate(100%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0 4px 4px 0;
+  padding: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 222;
+}
+
+.hotTags .close-tab-tags {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #0b0b0b;
+}
+
+.hotTags ul li {
+  line-height: 1.7;
+}
+
+.hotTags ul li a {
+  color: #0b0b0b;
+  padding: 2px;
+}
+
+.hotTags ul li a:hover {
+  color: #ff0000;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.toggleHotTags {
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
+}
+
+.toggleHotTags .open-tab-tags {
+  display: none;
+}
+
+.nav-articles {
+  margin: 8px 0;
+}
+
+.list-nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px;
+}
+
+.list-nav .btn-nav {
+  border: 2px solid transparent;
+  outline: 0;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.active-btn-articles {
+  border-bottom-color: #323ebe !important;
+  border-radius: 0 !important;
+}
+
+.wrapper-articles {
+  padding: 16px;
+}
+
+@media (max-width: 576px) {
+  .nav-articles {
+    padding: 4px 8px !important;
+  }
+}
+/*# sourceMappingURL=home.css.map */

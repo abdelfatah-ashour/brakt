@@ -1,0 +1,129 @@
+@import "../../assets/css/variables.scss";
+
+// start articles
+.one-article {
+  position: relative;
+  min-height: 280px;
+  max-height: 310px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  display: flex;
+  padding: 0;
+
+  .wrapper-image {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .category {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      color: $four-color;
+      text-transform: uppercase;
+      padding: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 4px 0 0 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .container-info-author {
+    .image-author {
+      width: 40px;
+      height: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .article-details {
+    position: absolute;
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 2;
+    width: 100%;
+    height: 90px;
+    .article-img-user {
+      flex: 0.2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        border-radius: 50%;
+        background-color: #fff;
+        width: 50px !important;
+        height: 50px !important;
+      }
+    }
+    .details {
+      flex: 0.8;
+      padding: 4px 0;
+      .title {
+        font-size: 12px;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .save-article {
+    a {
+      color: $second-color;
+      text-transform: capitalize;
+      margin-right: 4px;
+      &:hover {
+        color: $first-color;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  &:hover .wrapper-image img {
+    transform: scale(1.1);
+    transition: all 0.5s ease-out;
+  }
+}
+
+.btn-save {
+  position: absolute;
+  top: 25%;
+  right: -1px;
+  transform: translateY(-25%);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 2px;
+  color: #fff;
+  background-color: $first-color;
+  border: 1px solid $first-color;
+  border-radius: 4px 0 0 4px;
+  outline: 0;
+  z-index: 3;
+}
+
+.sports {
+  background-color: rgb(132, 0, 255);
+}
+
+.healthy {
+  background-color: rgb(255, 0, 170);
+}
+
+.technology {
+  background-color: rgb(45, 155, 136);
+}
+
+.general {
+  background-color: rgb(20, 66, 6);
+}

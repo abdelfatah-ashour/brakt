@@ -1,0 +1,33 @@
+@import "./variables.scss";
+
+h1 {
+  align-self: center;
+  word-spacing: 16px;
+  line-height: 120px;
+}
+
+.container-create-post {
+  width: 50%;
+  align-self: center;
+  box-shadow: 0 0 2px 8px #fff;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+label {
+  color: $second-color !important;
+  font-weight: 700;
+  padding: 2px;
+}
+
+@media (max-width: 576px) {
+  .container-create-post {
+    width: 95%;
+  }
+}
+
+@media (min-width: 576.5px) and (max-width: 768px) {
+  .container-create-post {
+    width: 75%;
+  }
+}
