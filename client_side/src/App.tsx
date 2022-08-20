@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { io } from "socket.io-client";
@@ -33,9 +33,7 @@ interface Auth {
 }
 
 export default function App() {
-  // const { auth: isAuth } = useSelector<Auth>((state) => state);
-
-  // console.log(isAuth);
+  const [wishList, setWishList] = useState([]);
 
   let auth: Auth = {
     isLogin: false,
@@ -44,19 +42,13 @@ export default function App() {
     username: "",
   };
 
-  // memoize the all washlist from localstorage and use it with dispacth
-  const arrOfWishList = useMemo(() => {
-    const getWishlist: string = localStorage?.getItem("wishlist_articles") || "";
-    const arr = JSON.parse(getWishlist);
-    return arr;
-  }, []);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // get all wishlist from locat storage and siaptch it to store
-    dispatch({ type: FETCH_WISHLIST, payload: arrOfWishList });
-  }, [arrOfWishList, dispatch]);
+    const getWishlist: string = localStorage?.getItem("wishlist_articles") || JSON.stringify([]);
+    const listWishlist = JSON.parse(getWishlist);
+    dispatch({ type: FETCH_WISHLIST, payload: listWishlist });
+  }, [dispatch]);
 
   return (
     <div className="App">
