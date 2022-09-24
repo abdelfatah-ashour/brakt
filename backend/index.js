@@ -11,7 +11,7 @@ const path = require("path");
 const { ClientDB } = require("./config/db");
 
 // connection with database noSql like mongodb atlas free hosting
-require("./config/db")("mongodb+srv://abdo:abdo123@cluster0.rgga0.mongodb.net/?retryWrites=true&w=majority");
+require("./config/db")("mongodb+srv://abdelfatah:abdo123@cluster0.rgga0.mongodb.net/?retryWrites=true&w=majority");
 
 // import socket.io
 require("./socket.io/index")(createServer);
@@ -29,7 +29,7 @@ process.on("unhandledRejection", reason => {
 
 app.use(
   cors({
-    origin: process.env.NODE_ENV === "deveelopment" ? process.env.CLIENT_URL_DEV : process.env.CLIENT_URL_PROD,
+    origin: process.env.NODE_ENV === "development" ? process.env.CLIENT_URL_DEV : process.env.CLIENT_URL_PROD,
     credentials: true,
     path: "/",
   })

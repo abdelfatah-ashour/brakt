@@ -5,6 +5,8 @@ module.exports = async function connectToDatabase(uri) {
     .connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useNewUrlParser: true,
+      dbName: "brakt",
     })
     .then(() => {
       console.log("connected to db");

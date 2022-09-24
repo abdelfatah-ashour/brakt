@@ -4,12 +4,9 @@ const fs = require("fs");
 const path = require("path");
 
 async function deleteImages(filename) {
-  await fs.unlink(
-    path.join(__dirname, "..", "public", "images", filename),
-    (error) => {
-      if (error) throw new Error(error.message);
-    }
-  );
+  await fs.unlink(path.join(__dirname, "..", "public", "images", filename), error => {
+    if (error) throw new Error(error.message);
+  });
 }
 
 async function createArticle(req, res) {
