@@ -17,7 +17,6 @@ export default function Home() {
   });
 
   const { loading, apiData, error } = useFetch("GET", "/article", allArticles.currentFilter, "All", allArticles.page);
-  console.log("loading, apiData, error", loading, apiData, error);
 
   const toggleHotTags = (): void => {
     const elem = document.getElementById("hotTags");
