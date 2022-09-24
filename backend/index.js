@@ -10,8 +10,8 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const { ClientDB } = require("./config/db");
 
-// import DB
-ClientDB(process.env.DB_URL);
+// connection with database noSql like mongodb atlas free hosting
+require("./config/db")("mongodb+srv://abdo:abdo123@cluster0.rgga0.mongodb.net/?retryWrites=true&w=majority");
 
 // import socket.io
 require("./socket.io/index")(createServer);
