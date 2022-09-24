@@ -13,14 +13,8 @@ import { notify } from "../components/Toast";
 import { apiAxios } from "../utilities/axios";
 import { AuthShape } from "../utilities/interfaces";
 import ScoketType from "../utilities/socket-events.json";
-let {
-  ADD_COMMENT,
-  ADD_LIKE_ARTICLE,
-  ADD_UNLIKE_ARTICLE,
-  CANCEL_LIKE_ARTICLE,
-  CANCEL_UNLIKE_ARTICLE,
-  DELETE_COMMENT,
-} = ScoketType;
+let { ADD_COMMENT, ADD_LIKE_ARTICLE, ADD_UNLIKE_ARTICLE, CANCEL_LIKE_ARTICLE, CANCEL_UNLIKE_ARTICLE, DELETE_COMMENT } =
+  ScoketType;
 
 export default function DetailsArticle() {
   const params = useParams<any>();
@@ -38,9 +32,7 @@ export default function DetailsArticle() {
       auth: AuthShape;
     }
   >((state: RootStateOrAny) => state);
-  const anonymous: any = localStorage.getItem("anonymous")
-    ? JSON.parse(localStorage.getItem("anonymous") || "")
-    : null;
+  const anonymous: any = localStorage.getItem("anonymous") ? JSON.parse(localStorage.getItem("anonymous") || "") : null;
 
   const handleChangeComment = (e: React.ChangeEvent<HTMLInputElement>) => {
     setComment(e.target.value);
@@ -74,9 +66,7 @@ export default function DetailsArticle() {
 
   const deleteComment = (articleId: number, commentId: number) => {
     Socket.emit(DELETE_COMMENT, { articleId, commentId });
-    setAllComments(
-      allComments.filter((comment: any) => comment._id !== commentId)
-    );
+    setAllComments(allComments.filter((comment: any) => comment._id !== commentId));
   };
 
   const handleToggleLike = (type: any, articleId: number) => {
@@ -112,9 +102,7 @@ export default function DetailsArticle() {
         articleId,
         userId: anonymous._id,
       });
-      setAllUnlike(
-        allLike.filter((like: any) => like.userId !== anonymous._id)
-      );
+      setAllUnlike(allLike.filter((like: any) => like.userId !== anonymous._id));
     }
   };
 
@@ -170,9 +158,9 @@ export default function DetailsArticle() {
               <div className="box-image">
                 <img
                   src={
-                    process.env.REACT_APP_API_IMAGE +
-                    "/v1/image/" +
-                    article.imageArticle
+                    process.env.NODE_ENV === "production"
+                      ? `${process.env.REACT_APP_API_IMAGE}/v1/image/${article.imageArticle}`
+                      : `/v1/image/${article.imageArticle}`
                   }
                   alt={article.title}
                   loading="lazy"
@@ -180,65 +168,46 @@ export default function DetailsArticle() {
               </div>
               <div className="wrapper-content row my-2">
                 <div className="box-details col-md-3 col-12">
-                  <div>
-                    By:{" "}
-                    {article.author.firstName + " " + article.author.lastName}
-                  </div>
+                  <div>By: {article.author.firstName + " " + article.author.lastName}</div>
                   <div>⌚ {moment(article.createdAt).fromNow()}</div>
                 </div>
                 <div className="box-title col-md-9 col-12">
                   <h3 className="p-2">👻 {article.title}</h3>
                 </div>
-                <div
-                  className="box-content col-12 mt-3"
-                  dangerouslySetInnerHTML={{ __html: article.content }}
-                ></div>
+                <div className="box-content col-12 mt-3" dangerouslySetInnerHTML={{ __html: article.content }}></div>
 
                 <div className="box-create-comment col-12  my-3 d-flex flex-column align-items-center">
                   <div className="d-flex justify-content-center align-items-baseline">
                     <button
                       className={
-                        allLike.some(
-                          (like: any) => like.userId === anonymous._id
-                        )
+                        allLike.some((like: any) => like.userId === anonymous._id)
                           ? "btn-like btn-like-active btn"
                           : "btn-like btn"
                       }
                       onClick={() =>
                         handleToggleLike(
-                          allLike.some(
-                            (like: any) => like.userId === anonymous._id
-                          ),
+                          allLike.some((like: any) => like.userId === anonymous._id),
                           article._id
                         )
-                      }
-                    >
+                      }>
                       <AiFillLike />
                     </button>
                     <button
                       className={
-                        allUnlike.some(
-                          (like: any) => like.userId === anonymous._id
-                        )
+                        allUnlike.some((like: any) => like.userId === anonymous._id)
                           ? "btn-like btn-like-active btn"
                           : "btn-like btn"
                       }
                       onClick={() =>
                         handleToggleUnlike(
-                          allUnlike.some(
-                            (like: any) => like.userId === anonymous._id
-                          ),
+                          allUnlike.some((like: any) => like.userId === anonymous._id),
                           article._id
                         )
-                      }
-                    >
+                      }>
                       <AiFillDislike />
                     </button>
                   </div>
-                  <label
-                    htmlFor="createComment"
-                    className="form-label text-capitalize text-start"
-                  >
+                  <label htmlFor="createComment" className="form-label text-capitalize text-start">
                     type comment
                   </label>
                   <input
@@ -248,7 +217,7 @@ export default function DetailsArticle() {
                     placeholder="comment..."
                     value={comment}
                     onChange={handleChangeComment}
-                    onKeyUp={(e) => addComment(e, article)}
+                    onKeyUp={e => addComment(e, article)}
                   />
                 </div>
 
@@ -262,14 +231,10 @@ export default function DetailsArticle() {
                         <div className="comment-content col-9 d-flex justify-content-start align-items-center p-2 ">
                           {comment.content}
                         </div>
-                        {(comment.userId === anonymous._id ||
-                          comment.userId === auth._id) && (
+                        {(comment.userId === anonymous._id || comment.userId === auth._id) && (
                           <button
                             className="btn-delete btn btn-danger col-1"
-                            onClick={() =>
-                              deleteComment(article._id, comment._id)
-                            }
-                          >
+                            onClick={() => deleteComment(article._id, comment._id)}>
                             <AiFillDelete />
                           </button>
                         )}
@@ -281,9 +246,7 @@ export default function DetailsArticle() {
             </div>
           </div>
         )}
-        {error && (
-          <div className="alert alert-danger">something went wrong!</div>
-        )}
+        {error && <div className="alert alert-danger">something went wrong!</div>}
       </main>
     </Helmet>
   );
